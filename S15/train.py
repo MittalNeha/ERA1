@@ -40,7 +40,7 @@ def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_
         out = model.decode(encoder_output, source_mask, decoder_input, decoder_mask)
 
         prob = model.project(out[:, -1])
-        _, next_word = torch.max(prob, dim=-1)
+        _, next_word = torch.max(prob, dim=1)
         decoder_input = torch.cat(
             [decoder_input, torch.empty(1,1).type_as(source).fill_(next_word.item()).to(device)], dim=1
         )
@@ -119,9 +119,8 @@ def get_or_build_tokenizer(config, ds, lang):
         tokenizer = Tokenizer(WordLevel(unk_token="[UNK]"))
         tokenizer.pre_tokenizer = Whitespace()
         trainer = WordLevelTrainer(special_tokens=["[UNK]", "[PAD]", "[SOS]", "[EOS]"], min_frequency=2)
-        tokenizer.train_from_iterator(get_all_sentences(ds, lang), trainer)
+        tokenizer.train_from_iterator(get_all_sentences(ds, lang), trainer=trainer)
         tokenizer.save(str(tokenizer_path))
-
     else:
         tokenizer = Tokenizer.from_file(str(tokenizer_path))
     return tokenizer
@@ -147,9 +146,9 @@ def get_ds(config):
 
     for item in ds_raw:
         src_ids = tokenizer_src.encode(item['translation'][config['lang_src']]).ids
-        tgt_ids = tokenizer_src.encode(item['translation'][config['lang_tgt']]).ids
+        tgt_ids = tokenizer_tgt.encode(item['translation'][config['lang_tgt']]).ids
         max_len_src = max(max_len_src, len(src_ids))
-        max_len_src = max(max_len_tgt, len(tgt_ids))
+        max_len_tgt = max(max_len_tgt, len(tgt_ids))
 
     print(f"Max length of source sentence: {max_len_src}")
     print(f"Max length of target sentence: {max_len_tgt}")
