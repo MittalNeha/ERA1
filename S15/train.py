@@ -119,8 +119,8 @@ def get_or_build_tokenizer(config, ds, lang):
         tokenizer = Tokenizer(WordLevel(unk_token="[UNK]"))
         tokenizer.pre_tokenizer = Whitespace()
         trainer = WordLevelTrainer(special_tokens=["[UNK]", "[PAD]", "[SOS]", "[EOS]"], min_frequency=2)
-        trainer.train_from_iterator(get_all_sentences(ds, lang), trainer)
-        trainer.save(str(tokenizer_path))
+        tokenizer.train_from_iterator(get_all_sentences(ds, lang), trainer)
+        tokenizer.save(str(tokenizer_path))
 
     else:
         tokenizer = Tokenizer.from_file(str(tokenizer_path))
@@ -171,7 +171,7 @@ def train_model(config):
     Path(config["model_folder"]).mkdir(parents=True, exist_ok=True)
 
     train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt = get_ds(config)
-    model = get_model(config, tokenizer_src.get_vocab_len(), tokenizer_tgt.get_vocab_len().to(device))
+    model = get_model(config, tokenizer_src.get_vocab_size(), tokenizer_tgt.get_vocab_size()).to(device)
     # Tensorboard
     writer = SummaryWriter(config["experiment_name"])
 
@@ -189,7 +189,7 @@ def train_model(config):
         global_step = state['global_step']
         print("Preloaded")
 
-    loss_fn = nn.CrossEntropyLoss(ignore_index=tokenizer_src.token_to_id(['PAD']), label_smoothing=0.1)
+    loss_fn = nn.CrossEntropyLoss(ignore_index=tokenizer_src.token_to_id('[PAD]'), label_smoothing=0.1)
 
     for epoch in range(initial_epoch, config['num_epochs']):
         torch.cuda.empty_cache()
@@ -236,5 +236,8 @@ def train_model(config):
 
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
-    config = get_config()
-    train_model(config)
+    cfg = get_config()
+    cfg['batch_size'] = 6
+    cfg['preload'] = None
+    cfg['num_epochs'] = 30
+    train_model(cfg)
