@@ -29,7 +29,7 @@ def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_
 
     encoder_output = model.encode(source, source_mask)
 
-    decoder_input = torch.empty(1, 1,).fill(sos_idx).type_as(source).to(device)
+    decoder_input = torch.empty(1, 1,).fill_(sos_idx).type_as(source).to(device)
     while True:
         if decoder_input.size(1) == max_len:
             break
@@ -104,7 +104,7 @@ def run_validation(model, validation_ds, tokenizer_src, tokenizer_tgt, max_len, 
         writer.add_scalar('validation wer', wer, global_step)
         writer.flush()
 
-        metric = torchmetrics.BlEUScore()
+        metric = torchmetrics.BLEUScore()
         bleu = metric(predicted, expected)
         writer.add_scalar('validation BLEU', bleu, global_step)
         writer.flush()
@@ -237,7 +237,9 @@ def train_model(config):
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
     cfg = get_config()
-    cfg['batch_size'] = 6
+    cfg['batch_size'] = 16
     cfg['preload'] = None
     cfg['num_epochs'] = 30
+    cfg['d_model'] = 128
+    cfg['seq_len'] = 250
     train_model(cfg)
