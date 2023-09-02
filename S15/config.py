@@ -15,7 +15,9 @@ def get_config():
         "model_basename": "tmodel_",
         "preload": True,
         "tokenizer_file": "tokenizer_{0}.json",
-        "experiment_name": "runs/tmodel"
+        "experiment_name": "runs/tmodel",
+        "ds_loc": "disk",
+        "ds_path": "./OpusBooks"
     }
 
 

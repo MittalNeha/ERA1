@@ -1,0 +1,335 @@
+Using device: cuda
+Max length of source sentence: 309
+Max length of target sentence: 274
+Processing Epoch 00: 100%|██████████| 4850/4850 [10:07<00:00,  7.98it/s, loss=6.293]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'I see that on the whole you are well satisfied with your day.'
+    TARGET: — In generale — proseguì Sergej Ivanovic — come vedo, sei soddisfatto della tua giornata.
+ PREDICTED: — Ma che è un po ’ di , ma non è un po ’ di .
+--------------------------------------------------------------------------------
+    SOURCE: 'Where am I? What am I doing?
+    TARGET: “Dove sono? che faccio? perché?”.
+ PREDICTED: — No , Jane , Jane ?
+--------------------------------------------------------------------------------
+Processing Epoch 01: 100%|██████████| 4850/4850 [10:01<00:00,  8.07it/s, loss=5.816]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'You did not expect me, eh?' said Oblonsky, getting out of the sledge with mud on his nose, cheek, and eyebrows, but beaming with cheerfulness and health. 'I have come to see you, that's one thing,' he said embracing and kissing Levin, 'to get some shooting, that's two, and to sell the Ergushevo forest, that's three.'
+    TARGET: — Forse non m’aspettavi? — disse Stepan Arkad’ic, uscendo dalla slitta con vari schizzi di fango alla radice del naso, sulla guancia e sul sopracciglio, ma splendente di buonumore e di salute. — Sono venuto, prima di tutto, per vederti — disse, abbracciandolo e baciandolo; — poi, per fermarmi un po’ per la caccia, ed infine anche per vendere il bosco di Ergušovo.
+ PREDICTED: — Non vi ho detto , — disse Stepan Arkad ’ ic , con un sorriso di un sorriso di un sorriso di un sorriso , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , con un ’ egli si mise a Levin , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , e , come si mise a Levin , e , e , e , e , come si mise a Levin , come si disse , e , come si mise a Levin , e , e , e , come in un ’ intende , e , e , e ,
+--------------------------------------------------------------------------------
+    SOURCE: "It passes me!" she continued; "but no doubt, it is true since you say so.
+    TARGET: — Non capisco! — continuò. — Non dubito però di ciò che dite.
+ PREDICTED: — È un ' altra , — disse , — ma non è più più più più più .
+--------------------------------------------------------------------------------
+Processing Epoch 02: 100%|██████████| 4850/4850 [10:00<00:00,  8.07it/s, loss=5.585]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: He knows everything, sees everything – what then does he feel, if he can talk so calmly?
+    TARGET: Egli sa tutto, vede tutto; che cosa mai c’è in lui, dunque, se può così tranquillamente parlare?
+ PREDICTED: E come è questo , che cosa può fare ?
+--------------------------------------------------------------------------------
+    SOURCE: Especially as she...'
+    TARGET: Proprio lei...
+ PREDICTED: È questo ...
+--------------------------------------------------------------------------------
+Processing Epoch 03: 100%|██████████| 4850/4850 [09:59<00:00,  8.09it/s, loss=5.771]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: I liked to read what they liked to read: what they enjoyed, delighted me; what they approved, I reverenced.
+    TARGET: Mi piaceva di leggere gli stessi libri che esse leggevano; quello che le rallegrava, rallegrava me pure, ciò che esse approvavano, lo approvavo.
+ PREDICTED: Mi sentii parlare di nuovo con cui cosa mi , e che cosa mi , mi , mi di nuovo .
+--------------------------------------------------------------------------------
+    SOURCE: She knows I was more than usually amiable to her husband.
+    TARGET: Sa che io sono stata più gentile del solito verso suo marito.
+ PREDICTED: Mi pare che non potevo più parlare di lei .
+--------------------------------------------------------------------------------
+Processing Epoch 04: 100%|██████████| 4850/4850 [09:58<00:00,  8.10it/s, loss=4.359]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: It must be because he thinks too much.
+    TARGET: Probabilmente perché pensa molto.
+ PREDICTED: È impossibile che sia male .
+--------------------------------------------------------------------------------
+    SOURCE: I would not let Harris touch it, because he is careless.
+    TARGET: Ma l’avevo lasciato toccare ad Harris, perchè Harris è uno sbadato.
+ PREDICTED: Non ho un po ’ di Harris , perché è un uomo .
+--------------------------------------------------------------------------------
+Processing Epoch 05: 100%|██████████| 4850/4850 [09:57<00:00,  8.11it/s, loss=4.269]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'And your hair has become very white;
+    TARGET: “sulla tua chioma splende — quasi un candore alpino;
+ PREDICTED: — E voi siete un uomo che ha .
+--------------------------------------------------------------------------------
+    SOURCE: 'Well, he is an unbeliever!
+    TARGET: “Via, miscredente!
+ PREDICTED: — E lui è una cosa che ha fatto .
+--------------------------------------------------------------------------------
+Processing Epoch 06: 100%|██████████| 4850/4850 [09:58<00:00,  8.11it/s, loss=4.214]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "And the school, Miss Eyre?
+    TARGET: — E la scuola, signorina Eyre?
+ PREDICTED: — E la scuola , signorina Eyre ?
+--------------------------------------------------------------------------------
+    SOURCE: If you like I will make Madame Stahl's acquaintance.
+    TARGET: Se vuoi farò conoscenza con la signora Stahl.
+ PREDICTED: Se io , io la signora Stahl .
+--------------------------------------------------------------------------------
+Processing Epoch 07: 100%|██████████| 4850/4850 [09:59<00:00,  8.09it/s, loss=4.277]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: I was something impatient, as I have observed, to have the use of my boat, though very loath to run any more hazards; and therefore sometimes I sat contriving ways to get her about the island, and at other times I sat myself down contented enough without her.
+    TARGET: Viaggio per terra alla spiaggia innanzi cui quasi pericolò la piroga. Mi pungea sempre, come ho già osservato, un tal qual desiderio di avere a mia disposizione la mia scialuppa ancorchè fossi schifo di correre d’ora in poi più gravi rischi sul mare; qualche volta pertanto stava fantasticando se pur vi fosse qualche modo di tirarmela vicina; altre volte poi mi rassegnava a far senza di essa.
+ PREDICTED: Mi trovavo in modo che avrei condotto a me , come ho già fatto , perchè , se avessi preso la mia scialuppa , e benchè non avessi potuto , e che mi la mia liberazione , e mi sempre più di quanto mi , senza la mia liberazione .
+--------------------------------------------------------------------------------
+    SOURCE: Here, leaning over the banister, I cried out suddenly, and without at all deliberating on my words--
+    TARGET: Sporgendomi allora dalla balaustra della scala, mi misi a gridare, senza riflettere alle mie parole:
+ PREDICTED: , , , mi dissi , e senza aprire la mia scatola .
+--------------------------------------------------------------------------------
+Processing Epoch 08: 100%|██████████| 4850/4850 [09:58<00:00,  8.10it/s, loss=3.890]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: By this time she had found her way into a tidy little room with a table in the window, and on it (as she had hoped) a fan and two or three pairs of tiny white kid gloves: she took up the fan and a pair of the gloves, and was just going to leave the room, when her eye fell upon a little bottle that stood near the looking- glass.
+    TARGET: In quell'atto era entrata in una graziosa cameretta, con un tavolo nel vano della finestra. Sul tavolo c'era, come Alice aveva sperato, un ventaglio e due o tre paia di guanti bianchi e freschi; prese il ventaglio e un paio di guanti, e si preparò ad uscire, quando accanto allo specchio scorse una boccettina.
+ PREDICTED: In quel momento le fu parso di una tavola con una tavola in una tavola in tavola , e , , le tre sorelle e le due sorelle si mise a sedere sul ventaglio e due le mani sulle ginocchia di una sedia di guanti .
+--------------------------------------------------------------------------------
+    SOURCE: Well, what's to be done!
+    TARGET: Ma che fare!
+ PREDICTED: Ma che fare ?
+--------------------------------------------------------------------------------
+Processing Epoch 09: 100%|██████████| 4850/4850 [10:01<00:00,  8.07it/s, loss=3.293]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: The conversation touched on table-turning and spiritualism, and the Countess Nordston, who believed in spiritualism, began relating miracles she had witnessed.
+    TARGET: La conversazione si era orientata intanto verso i tavoli che girano e gli spiriti, e la Nordston, che credeva allo spiritismo, cominciò a raccontare i prodigi che aveva visto.
+ PREDICTED: La conversazione leggeva sul tavolo e , e la Nordston , che credeva in presenza sua , le riusciva .
+--------------------------------------------------------------------------------
+    SOURCE: 'You did not expect me, eh?' said Oblonsky, getting out of the sledge with mud on his nose, cheek, and eyebrows, but beaming with cheerfulness and health. 'I have come to see you, that's one thing,' he said embracing and kissing Levin, 'to get some shooting, that's two, and to sell the Ergushevo forest, that's three.'
+    TARGET: — Forse non m’aspettavi? — disse Stepan Arkad’ic, uscendo dalla slitta con vari schizzi di fango alla radice del naso, sulla guancia e sul sopracciglio, ma splendente di buonumore e di salute. — Sono venuto, prima di tutto, per vederti — disse, abbracciandolo e baciandolo; — poi, per fermarmi un po’ per la caccia, ed infine anche per vendere il bosco di Ergušovo.
+ PREDICTED: — Non mi avete fatto la colazione ? — disse Stepan Arkad ’ ic , dandogli la trojka e , con la mano e sommessa con la mano e sommessa . — Sono venuto a vedere la tua destra , la mano che diceva : — Levin , la mano a destra , e , per un paio di verghe di piombo .
+--------------------------------------------------------------------------------
+Processing Epoch 10: 100%|██████████| 4850/4850 [10:00<00:00,  8.07it/s, loss=3.147]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: He shook his head, and said, “None; ugly dog eat all up self.”
+    TARGET: Chiestogli se avesse dato pane a suo padre, mi rispose alzando la testa: «No, affatto; io aver tutto mangiato.»
+ PREDICTED: il capo , e disse : — « Me voler far nulla ; — tutti .»
+--------------------------------------------------------------------------------
+    SOURCE: "When I go to India, Jane, will I leave you!
+    TARGET: — Quando andrò nell'India vi lascierò forse, Jane?
+ PREDICTED: — Quando vado , Jane , vi andrò , vi condurrò in voi .
+--------------------------------------------------------------------------------
+Processing Epoch 11: 100%|██████████| 4850/4850 [10:05<00:00,  8.01it/s, loss=3.175]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: But as to the sail, that was my particular care.
+    TARGET: Per le vele ne presi tutto il carico io.
+ PREDICTED: Ma come la vela fu di una particolare particolare particolare .
+--------------------------------------------------------------------------------
+    SOURCE: We had left the boat, and all it contained, in his charge, with instructions that it was to be ready for us at nine the next morning.
+    TARGET: Avevamo lasciato la barca, e quanto conteneva, in sua custodia, con l’istruzione che doveva esser pronta per le nove della mattina dopo.
+ PREDICTED: Avevamo chiusa la nostra barca , e tutti gli oggetti , che ci eravamo dimenticati della nostra partenza , ci doveva essere pronto per la mattina .
+--------------------------------------------------------------------------------
+Processing Epoch 12: 100%|██████████| 4850/4850 [10:01<00:00,  8.06it/s, loss=2.963]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Does he wish it?'
+    TARGET: Lo desidera lui?
+ PREDICTED: E deve forse pensare ?
+--------------------------------------------------------------------------------
+    SOURCE: I care not in this moment sweet, Though all I have rushed o'er Should come on pinion, strong and fleet, Proclaiming vengeance sore:
+    TARGET: "Non vi penso in questo dolce momento, eppure tutto quello che ho scacciato può tornare, portato da ali agili e forti per chiedere vendetta.
+ PREDICTED: Non ho mai provata in quel istante , nonostante tutte le mie compagne , le facoltà di battere il cielo il cielo e le sue preghiere .
+--------------------------------------------------------------------------------
+Processing Epoch 13: 100%|██████████| 4850/4850 [10:01<00:00,  8.07it/s, loss=2.733]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Her hand convulsively grasped her fan, and she did not breathe.
+    TARGET: Tratteneva il respiro, e la sua mano stringeva convulsa il ventaglio.
+ PREDICTED: La mano scosse il ventaglio e non le si .
+--------------------------------------------------------------------------------
+    SOURCE: 'Shall we change our plan, Levin?' he said, with his finger on the bill of fare and his face expressing serious perplexity. 'But are the oysters really good?
+    TARGET: — Dobbiamo cambiare piano, Levin? — disse fermando un dito sulla carta. Il suo viso esprimeva seria perplessità. — Son buone le ostriche?
+ PREDICTED: — del nostro piano , Levin ? — disse , scherzando , il dito di terra e il viso gli si espresse la sua faccia . — Ma perché ... non sei mica il giuoco ?
+--------------------------------------------------------------------------------
+Processing Epoch 14: 100%|██████████| 4850/4850 [10:00<00:00,  8.07it/s, loss=2.622]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'How little of the military man is left in you!' remarked Serpukhovskoy. 'You might be a diplomatist, an artist, or anything of that kind.'
+    TARGET: — Quanto poco di militare è rimasto in te! — disse Serpuchovskoj. — Un diplomatico, un artista, ecco, qualcosa di simile.
+ PREDICTED: — Come avete lasciato in cambio del tutto diverso quel che è andato — disse Serpuchovskoj . — Sarebbe stato un incanto , o qualcosa di simile .
+--------------------------------------------------------------------------------
+    SOURCE: I had lived a dreadful life, perfectly destitute of the knowledge and fear of God.
+    TARGET: Io aveva condotta un’orribile vita affatto priva d’ogni pensiere, d’ogni timore di Dio.
+ PREDICTED: Ho vissuto una vita nuova , assolutamente vivente e per Dio , della sua misericordia .
+--------------------------------------------------------------------------------
+Processing Epoch 15: 100%|██████████| 4850/4850 [09:59<00:00,  8.08it/s, loss=3.330]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'Not long, I think,' she replied with embarrassment glancing at Vronsky.
+    TARGET: — Non credo a lungo — ella disse con impaccio, dopo aver guardato Vronskij.
+ PREDICTED: — Io , penso — ella disse , guardando Vronskij e gettando via Vronskij .
+--------------------------------------------------------------------------------
+    SOURCE: 'I don't suppose, I know! We have eyes for those things, and women haven't.
+    TARGET: — Io non lo penso, lo so; per questo noi uomini abbiamo gli occhi per vedere e non così le donnicciuole.
+ PREDICTED: — Non credo , lo so , lo so , e noi quei queste donne non .
+--------------------------------------------------------------------------------
+Processing Epoch 16: 100%|██████████| 4850/4850 [09:58<00:00,  8.10it/s, loss=3.231]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Evidently something unusual had happened.
+    TARGET: Doveva essere successo qualcosa d’eccezionale.
+ PREDICTED: qualcosa di strano .
+--------------------------------------------------------------------------------
+    SOURCE: 'I am very pleased with it too,' said Levin sincerely. He was glad not only to feel no hostility such as he had felt at home toward Vasenka Veslovsky; but on the contrary to feel quite friendly toward him.
+    TARGET: — Contentissimo — disse con sincerità Levin che era in particolar modo felice, non soltanto di non sentire più quell’ostilità che a casa aveva provato verso Vasen’ka, ma di sentire, al contrario, verso di lui la più cordiale disposizione d’animo.
+ PREDICTED: — Sono molto contenta di questo — disse Levin , ridendo sinceramente , di lui non solo non era stato d ’ avervi sentito quella tale che egli aveva provato a Vasen ’ ka Veslovskij , ma al contrario .
+--------------------------------------------------------------------------------
+Processing Epoch 17: 100%|██████████| 4850/4850 [09:58<00:00,  8.11it/s, loss=2.327]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: I have forgiven, and you must forgive.'
+    TARGET: Io ho perdonato, anche voi dovete perdonare!
+ PREDICTED: Io ti ho perdonato e tu dovete perdonare .
+--------------------------------------------------------------------------------
+    SOURCE: 'Then some one should invent a way of inoculating love, like vaccination.'
+    TARGET: — Allora bisogna imparare a inocularlo artificialmente, l’amore, come il vaiolo.
+ PREDICTED: — Allora un uomo l ’ amore per l ’ amore , sì , sì come un .
+--------------------------------------------------------------------------------
+Processing Epoch 18: 100%|██████████| 4850/4850 [09:57<00:00,  8.11it/s, loss=2.190]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: But it's sad – this place of yours, very sad.
+    TARGET: Solo che è triste, triste qui da voi.
+ PREDICTED: Ma qui è triste , è una scena .
+--------------------------------------------------------------------------------
+    SOURCE: It began to get dark.
+    TARGET: Cominciava a imbrunire.
+ PREDICTED: Così incominciò a .
+--------------------------------------------------------------------------------
+Processing Epoch 19: 100%|██████████| 4850/4850 [10:00<00:00,  8.08it/s, loss=2.285]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'I know,' she interrupted him, 'how hard it is for your honest nature to lie and I pity you.
+    TARGET: — Io so — ella lo interruppe — quanto sia penoso per la tua natura onesta mentire, e mi fai pena.
+ PREDICTED: — Conosco — ella interruppe — come è penoso per la tua sciocchezza — essere la tua sciocchezza , io ti prego .
+--------------------------------------------------------------------------------
+    SOURCE: 'Oh, things are rather bad...
+    TARGET: — Non va bene, non va bene.
+ PREDICTED: — Ma queste cose sono male .
+--------------------------------------------------------------------------------
+Processing Epoch 20: 100%|██████████| 4850/4850 [10:01<00:00,  8.07it/s, loss=1.996]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: The sealed-up thoughts began stirring in Levin's head, but he hastened to drive them away.
+    TARGET: Il pensiero, fino a quel momento chiuso nella mente di Levin, si agitò, ma egli si affrettò a respingerlo.
+ PREDICTED: Il passo , involontariamente nella testa di Levin , ma egli si alzò per andar via .
+--------------------------------------------------------------------------------
+    SOURCE: I wished to come myself, but changed my mind knowing that you would not like it.
+    TARGET: Volevo venire io stessa, ma ho cambiato idea, pensando che ti sarebbe spiaciuto.
+ PREDICTED: Io volevo venire , ma ho cambiato idea , non vi .
+--------------------------------------------------------------------------------
+Processing Epoch 21: 100%|██████████| 4850/4850 [10:03<00:00,  8.04it/s, loss=2.285]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: I had lived a dreadful life, perfectly destitute of the knowledge and fear of God.
+    TARGET: Io aveva condotta un’orribile vita affatto priva d’ogni pensiere, d’ogni timore di Dio.
+ PREDICTED: Ho vissuto una vita nuova , industria per l ’ oggetto e al peccato Iddio .
+--------------------------------------------------------------------------------
+    SOURCE: He did not believe in death in general, and especially not in her death, despite what Lydia Ivanovna had told him and his father had confirmed, and therefore even after he had been told she was dead, he went on looking for her when on his walks.
+    TARGET: Egli non credeva alla morte in genere, e in particolare alla morte di lei, sebbene Lidija Ivanovna glielo avesse detto e il padre riconfermato, e perciò anche dopo che gli avevano detto che era morta, egli, durante la passeggiata, continuava a cercarla.
+ PREDICTED: Non credeva in nessun modo particolare nella morte , e in particolare nella morte , malgrado la morte di lui che aveva detto tutto quello che aveva detto e che anche lui era morta quando avessero detto , nell ’ entrare morta , rientrò in mezzo per mezzo di lui .
+--------------------------------------------------------------------------------
+Processing Epoch 22: 100%|██████████| 4850/4850 [10:03<00:00,  8.04it/s, loss=2.095]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: It is very good for his health, and pleasant for him; and we have an arrangement by which this allowance goes for the hire of a carriage and coachman for me.'
+    TARGET: Gli fa bene alla salute, gli fa piacere fare un viaggio e io ormai ho stabilito che con quel denaro, in casa mia, si pagano carrozza e cocchiere.
+ PREDICTED: È bene la sua salute , un piacere , perché pure c ’ è , invece , c ’ è meno attaccato al cocchiere per il cocchiere .
+--------------------------------------------------------------------------------
+    SOURCE: But Golenishchev was embittered and tormented by it, while Vronsky could not deceive and torment himself, and above all could not become embittered.
+    TARGET: Ma Golenišcev era irritato e tormentato da tutto ciò, mentre Vronskij non poteva ingannarsi e tormentarsi e, soprattutto non poteva irritarsi.
+ PREDICTED: Ma Golenišcev lo e lo tormentava , mentre Vronskij non poteva perdonare e tutte le cose che non potevano più vincere .
+--------------------------------------------------------------------------------
+Processing Epoch 23: 100%|██████████| 4850/4850 [10:06<00:00,  8.00it/s, loss=1.528]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: In the new legal institutions he disapproved of the position occupied by lawyers.
+    TARGET: Nelle nuove istituzioni giudiziarie non approvava le condizioni in cui era stata posta l’avvocatura.
+ PREDICTED: Nell ’ altro c ’ è il più chiaro che io con la nostra situazione , di nuovo .
+--------------------------------------------------------------------------------
+    SOURCE: It was a glorious night.
+    TARGET: Era una magnifica notte.
+ PREDICTED: Era una notte magnifica .
+--------------------------------------------------------------------------------
+Processing Epoch 24: 100%|██████████| 4850/4850 [10:06<00:00,  8.00it/s, loss=2.048]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Vronsky did not reply, and after a few words addressed to the Princess Sorokina he left the box.
+    TARGET: Vronskij non rispose nulla e, dette poche parole alla principessina Sorokina, uscì.
+ PREDICTED: Vronskij non rispose nulla e , dopo aver parlato , si rivolse alla principessa sulla principessina Sorokina .
+--------------------------------------------------------------------------------
+    SOURCE: Certainly, nothing but some such decreed unavoidable misery, which it was impossible for me to escape, could have pushed me forward against the calm reasonings and persuasions of my most retired thoughts, and against two such visible instructions as I had met with in my first attempt.
+    TARGET: Certamente null’altro, che qualche cosa di simile ad un tale decreto, qualche cosa di connesso ad inevitabile sciagura, cui mi era impossibile il sottrarmi, può avermi tratto ad ostinarmi contro ai freddi ragionamenti e alle persuasioni dei miei più raccolti pensieri, e contro a due lezioni tanto potenti, siccome quelle che mi occorsero nel primo mio cimento.
+ PREDICTED: Certo , non mi stimolava nulla , né il , né la possibilità di trovarvi su le mie idee , né la possibilità di trovarvi quella calma che mi hanno posto in mente le mie idee , e posto quasi dinanzi a me con la prima volta che l ' aveva fatta cadere sotto il mio primo viaggio .
+--------------------------------------------------------------------------------
+Processing Epoch 25: 100%|██████████| 4850/4850 [10:06<00:00,  8.00it/s, loss=1.838]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "Is it her Mr. Bates has been to see?"
+    TARGET: — È venuto per lei il signor Batis?
+ PREDICTED: — È lei che le è venuto da lei ?
+--------------------------------------------------------------------------------
+    SOURCE: But of course you don't care for life abroad,' she went on with a pleasant smile: 'I know you and know all your tastes, though we have met so seldom.'
+    TARGET: Ma a voi non piace la vita all’estero — ella disse, sorridendo affabile. — Io vi conosco e conosco tutti i vostri gusti, pur avendovi visto poco.
+ PREDICTED: Ma tu , qualunque cosa diciate , è come voi — ella disse , sorridendo — io so soltanto con vostra opinione : poiché voi abbiamo stato così le nostre persone , anche se noi ci fosse stato così .
+--------------------------------------------------------------------------------
+Processing Epoch 26: 100%|██████████| 4850/4850 [10:05<00:00,  8.01it/s, loss=1.754]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: He vividly recalled the peasant and the incomprehensible words that the man had uttered, and a shudder of terror ran down his back.
+    TARGET: Ricordò di nuovo con chiarezza il contadino e le incomprensibili parole francesi che quello pronunciava, e il terrore gli corse come un brivido per la schiena.
+ PREDICTED: Ricordò con vivezza il contadino e la parole di lui , che aveva pronunciato un gesto su , e si fece un movimento rapido .
+--------------------------------------------------------------------------------
+    SOURCE: But in spite of all this, as he turned over his studies, pulled up the blinds, and withdrew the sheet from his picture, he felt very excited – all the more so because, though he regarded distinguished and wealthy Russians as mostly beasts and fools, Vronsky and especially Anna pleased him.
+    TARGET: Malgrado ciò, mentre voltava i suoi studi, sollevava le tendine e toglieva il lenzuolo, egli sentiva una grande agitazione, tanto più che sebbene, secondo lui, tutti i russi di gran famiglia e ricchi dovessero essere bestie e stupidi, Vronskij e in modo particolare Anna gli piacevano.
+ PREDICTED: Malgrado tutto questo , mentre egli provava delle osservazioni sui fianchi , le afferrò , le iniziali di quel quadro , e molto più chiaramente , perché egli guardava con la maggior facilità grande a tutti e parenti , quanto più di tutti gli uomini , che incontrava con lui e Anna Arkad ’ evna , tanto più che la raggiante posizione di tutti e Vronskij .
+--------------------------------------------------------------------------------
+Processing Epoch 27: 100%|██████████| 4850/4850 [10:04<00:00,  8.02it/s, loss=1.800]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: At last the Dodo said, 'everybody has won, and all must have prizes.'
+    TARGET: Finalmente il Dronte disse: — Tutti hanno vinto e tutti debbono essere premiati.
+ PREDICTED: Finalmente il Dronte disse : — Per ogni modo è , e tutti debbono le lodi .
+--------------------------------------------------------------------------------
+    SOURCE: Why do we eat and drink, go shooting and do no work, while he is always, always working?' said Vasenka Veslovsky, evidently for the first time in his life thinking of this, and therefore speaking quite genuinely.
+    TARGET: Come mai noi mangiamo, beviamo, andiamo a caccia, non facciamo nulla, e lui è eternamente, eternamente al lavoro? — disse Vasen’ka Veslovskij, dopo aver pensato, evidentemente per la prima volta in vita sua, in modo chiaro e, perciò con piena sincerità.
+ PREDICTED: Perché dici che non a caccia , e perciò per non ci fa nulla , fa sempre ?” disse Vasen ’ ka , evidentemente per la prima volta in modo e perciò , in modo con questo .
+--------------------------------------------------------------------------------
+Processing Epoch 28: 100%|██████████| 4850/4850 [10:03<00:00,  8.04it/s, loss=1.912]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'We are holding the position, Sergius Ivanich!' said he, smoothing back his whiskers.
+    TARGET: — Occupiamo la posizione — disse, lisciandosi tutte e due le fedine — Sergej Ivanyc!
+ PREDICTED: — Noi siamo strinse la posizione , Sergej Ivanovic — disse , la discussione .
+--------------------------------------------------------------------------------
+    SOURCE: CHAPTER XVI.
+    TARGET: CAPITOLO XVI.
+ PREDICTED: CAPITOLO XVI .
+--------------------------------------------------------------------------------
+Processing Epoch 29: 100%|██████████| 4850/4850 [10:02<00:00,  8.05it/s, loss=2.197]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: But then she felt that the one word forbade showed that she claimed certain rights over him, thereby encouraging him to speak of love. 'I have long wanted to say that to you,' she went on, looking resolutely into his eyes, her face all aglow and suffused with a burning blush, 'and today I came on purpose, knowing I should meet you here.
+    TARGET: — Ricordatevi che vi ho proibito di pronunciare questa parola, questa parola disgustosa — disse Anna, rabbrividendo; ma in quello stesso attimo sentì che con la sola parola «proibito» dava prova di attribuirsi dei diritti su di lui, e che con questo lo eccitava a parlare d’amore. — Da tempo volevo dirvi questo — continuò guardandolo decisa negli occhi e tutta accesa dal rossore che le scottava il viso; — ma oggi sono venuta apposta, sapendo di incontrarvi.
+ PREDICTED: Ma allora si sentiva che una parola era come se ella di rabbia e di tanto cordiale che non gli avessi voluto parlare . — Vi ho desiderato una volta — disse , guardando Levin , guardandolo negli occhi e per guardarlo con un viso e sempre piena di luce , e tutto il viso scarno .
+--------------------------------------------------------------------------------
+    SOURCE: He stood in the porch of the Karenins' house as one in a maze, and did not know what to do next.
+    TARGET: Egli stava fermo sulla scala di casa Karenin, come smemorato, senza sapere cosa fare.
+ PREDICTED: Stava dritto nell ’ ingresso della casa di Aleksej Aleksandrovic e non sapeva dove cominciare un laberinto .
+--------------------------------------------------------------------------------
+
+Process finished with exit code 0

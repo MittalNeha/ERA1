@@ -100,7 +100,7 @@ class MultiHeadAttentionBlock(nn.Module):
         # (batch, h, seq_len, d_k) -->
         attention_scores = (query @ key.transpose(-2, -1)) / math.sqrt(d_k)
         if mask is not None:
-            attention_scores.masked_fill(mask == 0, -1e9)
+            attention_scores.masked_fill_(mask == 0, -1e9)
         attention_scores = attention_scores.softmax(dim=-1)
 
         if dropout is not None:

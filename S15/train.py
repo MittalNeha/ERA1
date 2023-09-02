@@ -1,27 +1,27 @@
-from model import build_transformer
-from dataset import BilingualDataset, causal_mask
-from config import get_config, get_weights_file_path
-
-import torchtext.datasets as datasets
-import torch
-import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader, random_split
-from torch.optim.lr_scheduler import LambdaLR
-
-import warnings
-from tqdm import tqdm
 import os
 from pathlib import Path
 
-#Huggingface datasets and tokenizers
-from datasets import load_dataset
+import torch
+import torch.nn as nn
+import torchmetrics
+import warnings
+
+# Huggingface datasets and tokenizers
+from datasets import load_dataset, load_from_disk
+
+
 from tokenizers import Tokenizer
 from tokenizers.models import WordLevel
-from tokenizers.trainers import WordLevelTrainer
 from tokenizers.pre_tokenizers import Whitespace
-
-import torchmetrics
+from tokenizers.trainers import WordLevelTrainer
+from torch.utils.data import DataLoader, random_split
 from torch.utils.tensorboard import SummaryWriter
+from tqdm import tqdm
+
+from config import get_config, get_weights_file_path
+from dataset import BilingualDataset, causal_mask
+from model import build_transformer
+
 
 def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_len, device):
     sos_idx = tokenizer_tgt.token_to_id('[SOS]')
@@ -126,7 +126,10 @@ def get_or_build_tokenizer(config, ds, lang):
     return tokenizer
 
 def get_ds(config):
-    ds_raw = load_dataset('opus_books', f"{config['lang_src']}-{config['lang_tgt']}", split='train')
+    if config['ds_loc'] == 'disk':
+        ds_raw = load_from_disk(config['ds_path'])
+    else:
+        ds_raw = load_dataset('opus_books', f"{config['lang_src']}-{config['lang_tgt']}", split='train')
 
     # Build Tokenizer
     tokenizer_src = get_or_build_tokenizer(config, ds_raw, config["lang_src"])
@@ -140,7 +143,7 @@ def get_ds(config):
     train_ds = BilingualDataset(train_ds_raw, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
     val_ds = BilingualDataset(val_ds_raw, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
 
-    # Find the max len of each sentencein the source and target sentence
+    # Find the max len of each sentence in the source and target sentence
     max_len_src = 0
     max_len_tgt = 0
 
@@ -236,9 +239,7 @@ def train_model(config):
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
     cfg = get_config()
-    cfg['batch_size'] = 16
+    cfg['batch_size'] = 6
     cfg['preload'] = None
     cfg['num_epochs'] = 30
-    cfg['d_model'] = 128
-    cfg['seq_len'] = 250
     train_model(cfg)
