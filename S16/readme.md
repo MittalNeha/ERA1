@@ -5,9 +5,11 @@
 4. Train your own transformer (E-D) (do anything you want, use PyTorch, OCP, PS, AMP, etc), but get your loss under 1.8 <br>
 
 ## Experiments done
-1. d_model=128, len(eng) < 150
-2. d_model=128, len(eng) < 150, OneCyclePolicy(pct_start=0.1): <b>Model size: 1.1GB </b>
-3. d_model=512, len(eng) < 150, OneCyclePolicy(pct_start=0.2), Dynamic Padding, d_ff = 128: <b>Model size: 800 MB</b>
+
+![](training%20loss.png)
+1. d_model=128, len(eng) < 150, <b>Model size: 1.1GB </b>
+ 
+2. d_model=512, len(eng) < 150, OneCyclePolicy(pct_start=0.2), Dynamic Padding, d_ff = 128: <b>Model size: 800 MB</b>
 
 
     def collate_batch(self, batch):
@@ -92,7 +94,7 @@ Processing Epoch 20: 100%|██████████| 6146/6146 [08:57<00:00
 - Model size has reduced
 
 
-4. d_model=512, len(eng) < 150, OneCyclePolicy(, Dynamic Padding, d_ff = 128, Parameter sharing:<b>Model size: 676.9</b>
+3. d_model=512, len(eng) < 150, OneCyclePolicy(, Dynamic Padding, d_ff = 128, Parameter sharing:<b>Model size: 676.9</b>
 
 <br><i>Main Changes </i><br>
 
