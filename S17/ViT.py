@@ -29,7 +29,7 @@ class ViT(nn.Module):
 
     def forward(self, x, mask=None):
         x = self.encode(x, mask)
-        x = self.project(x)
+        x = self.project(x[:, 0])
         return x
 
 
