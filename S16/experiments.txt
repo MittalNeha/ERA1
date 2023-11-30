@@ -1,0 +1,54 @@
+1. d_model=128, len(eng) < 150
+Processing Epoch 10: 100%|██████████| 10244/10244 [21:35<00:00,  7.91it/s, loss=3.003]
+
+Processing Epoch 15: 100%|██████████| 10244/10244 [21:47<00:00,  7.83it/s, loss=2.545]
+
+Processing Epoch 20: 100%|██████████| 10244/10244 [22:03<00:00,  7.74it/s, loss=2.748]
+
+Processing Epoch 25: 100%|██████████| 10244/10244 [22:30<00:00,  7.58it/s, loss=3.131]
+
+
+Using device: cuda
+Max length of source sentence: 471
+Max length of target sentence: 482
+Processing Epoch 00: 100%|██████████| 10263/10263 [25:00<00:00,  6.84it/s, loss=5.261]
+
+Processing Epoch 10: 100%|██████████| 10263/10263 [29:56<00:00,  5.71it/s, loss=3.609]
+
+Processing Epoch 15: 100%|██████████| 10263/10263 [31:05<00:00,  5.50it/s, loss=2.765]
+
+Processing Epoch 20: 100%|██████████| 10263/10263 [33:50<00:00,  5.05it/s, loss=2.811]
+
+Processing Epoch 25: 100%|██████████| 10263/10263 [33:58<00:00,  5.04it/s, loss=2.260]
+
+Processing Epoch 29: 100%|██████████| 10263/10263 [34:05<00:00,  5.02it/s, loss=2.277]
+
+
+2. d_model=128, len(eng) < 150, OneCyclePolicy: 1.1GB
+Processing Epoch 00: 100%|██████████| 10246/10246 [23:29<00:00,  7.27it/s, loss=5.773]
+
+Processing Epoch 05: 100%|██████████| 10246/10246 [19:39<00:00,  8.68it/s, loss=2.860]
+
+Processing Epoch 07: 100%|██████████| 10246/10246 [21:53<00:00,  7.80it/s, loss=3.708]
+
+3. d_model=512, len(eng) < 150, OneCyclePolicy(, Dynamic Padding, d_ff = 128: Model size: 800 MB
+Processing Epoch 05: 100%|██████████| 6146/6146 [09:01<00:00, 11.34it/s, loss=2.926]
+
+Processing Epoch 10: 100%|██████████| 6146/6146 [08:54<00:00, 11.49it/s, loss=2.359]
+
+Processing Epoch 15: 100%|██████████| 6146/6146 [09:26<00:00, 10.85it/s, loss=2.018]
+
+Processing Epoch 20: 100%|██████████| 6146/6146 [08:57<00:00, 11.43it/s, loss=1.728]
+
+4. d_model=512, len(eng) < 150, OneCyclePolicy(, Dynamic Padding, d_ff = 128, Parameter sharing:Model size: 676.9
+Processing Epoch 05: 100%|██████████| 5351/5351 [07:59<00:00, 11.17it/s, loss=3.170]
+
+Processing Epoch 10: 100%|██████████| 5351/5351 [07:31<00:00, 11.84it/s, loss=2.152]
+
+Processing Epoch 15: 100%|██████████| 5351/5351 [07:54<00:00, 11.29it/s, loss=1.522]
+
+Processing Epoch 20: 100%|██████████| 5351/5351 [08:16<00:00, 10.77it/s, loss=2.417]
+
+Processing Epoch 25: 100%|██████████| 5351/5351 [09:05<00:00,  9.81it/s, loss=1.849]
+
+Processing Epoch 29: 100%|██████████| 5351/5351 [08:36<00:00, 10.36it/s, loss=1.533]

@@ -7,17 +7,18 @@ def get_config():
         "batch_size": 2048,
         "num_epochs": 20,
         "lr": 10 ** -4,
-        "seq_len": 350,
+        "seq_len": 160,
         "d_model": 512,
+        "d_ff": 128,
         "lang_src": "en",
-        "lang_tgt": "it",
+        "lang_tgt": "fr",
         "model_folder": "weights",
         "model_basename": "tmodel_",
         "preload": True,
         "tokenizer_file": "tokenizer_{0}.json",
-        "experiment_name": "runs/tmodel",
+        "experiment_name": "runs/OCP_DP_PS_model",
         "ds_loc": "disk",
-        "ds_path": "./OpusBooks"
+        "ds_path": "./OpusBooks_En_Fr"
     }
 
 

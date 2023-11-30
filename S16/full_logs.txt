@@ -1,0 +1,343 @@
+/home/e189236/MyWork/EVA/ERA1/venv/bin/python /home/e189236/MyWork/EVA/ERA1/S16/train.py
+/home/e189236/MyWork/EVA/ERA1/venv/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: /home/e189236/MyWork/EVA/ERA1/venv/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZNK3c1010TensorImpl36is_contiguous_nondefault_policy_implENS_12MemoryFormatE
+  warn(f"Failed to load image Python extension: {e}")
+2023-09-08 15:10:28.614519: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-09-08 15:10:29.828594: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Using device: cuda
+Max length of source sentence token: 39
+Max length of target sentence token: 39
+Max length of source sentence: 119
+Max length of target sentence: 128
+Processing Epoch 00: 100%|██████████| 5351/5351 [08:02<00:00, 11.09it/s, loss=4.500]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Theodore, do you remember those merry days?"
+    TARGET: Théodore, vous rappelez-vous ces jours de gaieté?
+ PREDICTED: - vous , tu vous ?
+--------------------------------------------------------------------------------
+    SOURCE: Yes, I do advise them still not to stir! only it doesn't do to be made a joke of after all!
+    TARGET: Seulement, il ne faut pas qu'on se foute de nous, a la fin!…
+ PREDICTED: Oui , je ne veux pas , ne pas pas pas !
+--------------------------------------------------------------------------------
+Processing Epoch 01: 100%|██████████| 5351/5351 [08:02<00:00, 11.09it/s, loss=4.699]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Listen Laurent, don't let us quarrel.
+    TARGET: Ne nous disputons pas, entends-tu, Laurent….
+ PREDICTED: Laurent ne s ' pas .
+--------------------------------------------------------------------------------
+    SOURCE: "There, I think." I pointed into the darkness.
+    TARGET: Dans le noir j’indiquai une direction.
+ PREDICTED: -- Je crois , je crois dans la nuit .
+--------------------------------------------------------------------------------
+Processing Epoch 02: 100%|██████████| 5351/5351 [07:28<00:00, 11.94it/s, loss=3.540]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: This was the accused.
+    TARGET: C’était l’accusée.
+ PREDICTED: Ce fut l ’ accusé de l ’ accusé .
+--------------------------------------------------------------------------------
+    SOURCE: He suddenly seemed to arouse himself: the conviction of the reality of all this seized him.
+    TARGET: Il sembla se réveiller tout à coup et se convaincre qu'il n'était pas le jouet d'un songe.
+ PREDICTED: Il paraissait brusquement , il semblait la idée de la vérité , la même idée de lui saisit .
+--------------------------------------------------------------------------------
+Processing Epoch 03: 100%|██████████| 5351/5351 [08:03<00:00, 11.07it/s, loss=3.759]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: When the sailor was enthusiastic, Neb always looked as if he would say, "Nothing could be more natural."
+    TARGET: Quand le marin s'enthousiasmait, Nab avait toujours l'air de lui répondre: «Mais rien n'est plus naturel.»
+ PREDICTED: Le marin était toujours , toujours , comme si il eût pu dire , rien ne pouvait plus naturel .
+--------------------------------------------------------------------------------
+    SOURCE: I ate supper, feasting with appetite on an excellent piece of seal liver whose flavor reminded me of pork.
+    TARGET: Je soupai avec appétit d'un excellent morceau de foie de phoque dont le goût rappelait celui de la viande de porc.
+ PREDICTED: Je mangeai , , d ' appétit , un excellent morceau de me to me to me .
+--------------------------------------------------------------------------------
+Processing Epoch 04: 100%|██████████| 5351/5351 [08:01<00:00, 11.10it/s, loss=3.315]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Most earnestly did she labour to prove the probability of error, and seek to clear the one without involving the other.
+    TARGET: Et elle s’opiniâtrait a croire que tout ceci n’était qu’une erreur, et a vouloir innocenter l’un sans accuser l’autre.
+ PREDICTED: Elle a voulu dire , a présent que l ’ on chercha la fermeté , pour le retenir , sans doute , le plus léger .
+--------------------------------------------------------------------------------
+    SOURCE: His hand rested upon the cushion of the divan from which he had just risen.
+    TARGET: Cet homme s'appuya de la main sur le dossier du divan qu'il venait de quitter.
+ PREDICTED: Sa main sur le divan , le divan de la main , qui s ' était levé .
+--------------------------------------------------------------------------------
+Processing Epoch 05: 100%|██████████| 5351/5351 [07:59<00:00, 11.17it/s, loss=3.170]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: All the better if the pumps do stop! the water will destroy the pits and everything will be done for!"
+    TARGET: Tant mieux si les pompes s'arretent! l'eau crevera les fosses, tout sera foutu!
+ PREDICTED: Tous les cent pistoles s ' ! l ' eau les grévistes ! et tout va faire pour tout !
+--------------------------------------------------------------------------------
+    SOURCE: Anyhow, we'll leave instructions to ship the whole menagerie to France."
+    TARGET: D'ailleurs, je donnerai l'ordre de nous expédier en France notre ménagerie.
+ PREDICTED: Enfin , nous tous les faits à la France .
+--------------------------------------------------------------------------------
+Processing Epoch 06: 100%|██████████| 5351/5351 [07:50<00:00, 11.37it/s, loss=2.872]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: But, to make up, I shall expect you to-morrow at twelve.
+    TARGET: Mais, pour vous récompenser, je vous attendrai demain à midi.
+ PREDICTED: Mais , pour faire , je vous attendrai demain à midi .
+--------------------------------------------------------------------------------
+    SOURCE: An Icelandic pilot came on board, and in three hours the _Valkyria_ dropped her anchor before Rejkiavik, in Faxa Bay.
+    TARGET: Un pilote islandais vint à bord, et, trois heures plus tard, la _Valkyrie_ mouillait devant Reykjawik, dans la baie de Faxa.
+ PREDICTED: Un pont de mer vint à bord , et dans trois heures , la pointe de Reykjawik , et dans la baie de verdure .
+--------------------------------------------------------------------------------
+Processing Epoch 07: 100%|██████████| 5351/5351 [07:48<00:00, 11.41it/s, loss=3.102]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Well, Planchet, how is the good Monsieur de Wardes? He is not dead, then?"
+    TARGET: Eh bien, Planchet, comment se porte ce bon M. de Wardes? il n'est donc pas mort?
+ PREDICTED: Eh bien , Planchet , comment est - ce que M . de Wardes ?
+--------------------------------------------------------------------------------
+    SOURCE: Voudriez-vous etre assez aimable pour me relire cette lettre tout haut ? »
+    TARGET: "Would you mind reading it to me aloud?"
+ PREDICTED: you along some talk for me of this letter this letter ?"
+--------------------------------------------------------------------------------
+Processing Epoch 08: 100%|██████████| 5351/5351 [07:46<00:00, 11.46it/s, loss=1.936]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Everything in the boat was damp and clammy.
+    TARGET: Toute chose dans le canot était humide et poisseuse.
+ PREDICTED: Tout à coup , le bateau fut de et de défi .
+--------------------------------------------------------------------------------
+    SOURCE: Il se leva et chercha à s’orienter.
+    TARGET: He rose and tried to find his bearings.
+ PREDICTED: He rose and looked down at all of a .
+--------------------------------------------------------------------------------
+Processing Epoch 09: 100%|██████████| 5351/5351 [07:49<00:00, 11.39it/s, loss=2.756]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Comte Norbert came up to Julien:
+    TARGET: Le comte Norbert s’approcha de Julien :
+ PREDICTED: Le comte accourut :
+--------------------------------------------------------------------------------
+    SOURCE: Le capitaine Teulier ; il faut faire l’affligé. »
+    TARGET: "Captain Teulier; I must look sad."
+ PREDICTED: " Captain Teulier , I must one sent for the next time ."
+--------------------------------------------------------------------------------
+Processing Epoch 10: 100%|██████████| 5351/5351 [07:31<00:00, 11.84it/s, loss=2.152]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: But why speak of his friends, his enemies?
+    TARGET: Mais à quoi bon nommer ses amis, ses ennemis ?
+ PREDICTED: Mais pourquoi parler de ses amis , ses ennemis ?
+--------------------------------------------------------------------------------
+    SOURCE: Moreover, this sort of tomb was not so very rare a thing in the cities of the Middle Ages.
+    TARGET: Ce n’était pas du reste chose très rare dans les villes du moyen âge que cette espèce de tombeaux.
+ PREDICTED: D ’ ailleurs , cette sorte de N ’ était pas si bien rare dans les imagine du moyen âge .
+--------------------------------------------------------------------------------
+Processing Epoch 11: 100%|██████████| 5351/5351 [07:55<00:00, 11.24it/s, loss=1.809]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: And d’Artagnan heard the door of communication opened violently.
+    TARGET: Et d'Artagnan entendit qu'on ouvrit violemment la porte de communication.
+ PREDICTED: Et d ' Artagnan entendit la porte qui s ' ouvrit avec violence .
+--------------------------------------------------------------------------------
+    SOURCE: "Good-bye for good this time."
+    TARGET: —Adieu pour tout de bon, cette fois.
+ PREDICTED: -- Adieu , pour cette fois .
+--------------------------------------------------------------------------------
+Processing Epoch 12: 100%|██████████| 5351/5351 [08:22<00:00, 10.66it/s, loss=2.067]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: The cardinal seemed furious.
+    TARGET: Le cardinal semblait furieux.
+ PREDICTED: Le cardinal paraissait s ' interrompre .
+--------------------------------------------------------------------------------
+    SOURCE: "And just talk to those gentlemen about your father's affair.
+    TARGET: —Et cause donc a ces messieurs de l'affaire de ton pere.
+ PREDICTED: – Et de parler ainsi à ces messieurs de votre affaire .
+--------------------------------------------------------------------------------
+Processing Epoch 13: 100%|██████████| 5351/5351 [08:04<00:00, 11.05it/s, loss=2.092]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Planchet obtained from Rochefort the rank of sergeant in the Piedmont regiment.
+    TARGET: Planchet obtint de Rochefort le grade de sergent dans les gardes.
+ PREDICTED: Planchet alla chercher le premier rang de la mine , en .
+--------------------------------------------------------------------------------
+    SOURCE: "Since the tide will be sufficient," Conseil replied simply.
+    TARGET: Puisque la marée suffira ! » répondit simplement Conseil.
+ PREDICTED: -- Puisque la mer suffit blanc , répondit Conseil .
+--------------------------------------------------------------------------------
+Processing Epoch 14: 100%|██████████| 5351/5351 [07:50<00:00, 11.36it/s, loss=1.703]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Children of the neighbouring farms, used to come to play with him, help him with housekeeping, work in the garden.
+    TARGET: Les enfants des fermes d’alentour venaient jouer avec lui, l’aider à faire son ménage, travailler dans le jardin.
+ PREDICTED: Dans les fermes , dans les fermes , s ’ y faire du Paris , pour lui faire de se faire du jardin .
+--------------------------------------------------------------------------------
+    SOURCE: People were at the windows to see the procession pass.
+    TARGET: On se tenait aux fenêtres pour voir passer le cortège.
+ PREDICTED: On était aux fenêtres de voir la procession qui se .
+--------------------------------------------------------------------------------
+Processing Epoch 15: 100%|██████████| 5351/5351 [07:54<00:00, 11.29it/s, loss=1.522]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Quasimodo recognized her.
+    TARGET: Quasimodo la reconnut.
+ PREDICTED: Quasimodo la reconnut .
+--------------------------------------------------------------------------------
+    SOURCE: "Because you are her lover, surely!"
+    TARGET: --Parce que vous êtes son amant, pardieu!
+ PREDICTED: -- Parce que vous êtes son amant , peut certainement !
+--------------------------------------------------------------------------------
+Processing Epoch 16: 100%|██████████| 5351/5351 [07:57<00:00, 11.20it/s, loss=1.825]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "Oh, nothing whatever."
+    TARGET: -- Oh! rien du tout.
+ PREDICTED: -- Rien d ' ailleurs .»
+--------------------------------------------------------------------------------
+    SOURCE: Alors tu ne mourras point avec la paix de l’âme, sur un siège de bois et vêtu de blanc.
+    TARGET: Then you will not die with peace in your soul, on a wooden seat and clad in white."
+ PREDICTED: Then you see him with the vivait of a very , the things annoy one to the mad , and .
+--------------------------------------------------------------------------------
+Processing Epoch 17: 100%|██████████| 5351/5351 [08:10<00:00, 10.90it/s, loss=1.738]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'Literally, and without missing a word.'
+    TARGET: – Fort exactement, et sans qu’il y manque un mot.
+ PREDICTED: , De Brindisi , sans mot dire .
+--------------------------------------------------------------------------------
+    SOURCE: "Get along!" he said, shrugging his shoulders; "you've not got anything."
+    TARGET: -- Allons donc! fit-il en haussant les épaules, vous n’avez plus rien.
+ PREDICTED: « Descendez donc , » dit - il en haussant les épaules ; « Vous n ' avez rien .
+--------------------------------------------------------------------------------
+Processing Epoch 18: 100%|██████████| 5351/5351 [08:11<00:00, 10.89it/s, loss=1.788]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: That is the true spirit.
+    TARGET: Voilà le véritable esprit.
+ PREDICTED: C ’ est le vrai esprit .
+--------------------------------------------------------------------------------
+    SOURCE: "Good," said she; "put it all on the little table, and draw it up to the bed; we will help ourselves.
+    TARGET: --Bien, dit-elle, mets tout cela sur la petite table, approche-la du lit; nous nous servirons nous-mêmes.
+ PREDICTED: « Bon , fit - elle , tout cela va à fait la petite table , et le au lit .
+--------------------------------------------------------------------------------
+Processing Epoch 19: 100%|██████████| 5351/5351 [08:30<00:00, 10.48it/s, loss=1.548]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: He released her.
+    TARGET: Il la lâcha.
+ PREDICTED: Il la lâcha .
+--------------------------------------------------------------------------------
+    SOURCE: In any event, it's better to perish with it than be accomplices in some act of revenge whose merits we can't gauge."
+    TARGET: En tout cas, mieux vaut périr avec lui que de se faire les complices de représailles dont on ne peut pas mesurer l'équité.
+ PREDICTED: Dans tous les cas , il vaut mieux à en être qu ' un peu de mérite de droit à dont nous ne savons pas les .
+--------------------------------------------------------------------------------
+Processing Epoch 20: 100%|██████████| 5351/5351 [08:16<00:00, 10.77it/s, loss=2.417]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Une barque parut, venant du côté de Côme, et fit des signes singuliers.
+    TARGET: A boat appeared, coming from the direction of Como, and made strange signals.
+ PREDICTED: One paraître at loin , his éloigna of 4 , and had made .
+--------------------------------------------------------------------------------
+    SOURCE: Centuries passed.
+    TARGET: Des siècles s'écoulèrent.
+ PREDICTED: Les se passèrent .
+--------------------------------------------------------------------------------
+Processing Epoch 21: 100%|██████████| 5351/5351 [08:03<00:00, 11.08it/s, loss=1.648]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: She now knew the smallness of the passions that art exaggerated.
+    TARGET: Elle connaissait à présent la petitesse des passions que l’art exagérait.
+ PREDICTED: Elle savait maintenant la route de l ’ enfer .
+--------------------------------------------------------------------------------
+    SOURCE: "Yes."
+    TARGET: -- Oui.»
+ PREDICTED: -- Oui .
+--------------------------------------------------------------------------------
+Processing Epoch 22: 100%|██████████| 5351/5351 [08:22<00:00, 10.66it/s, loss=1.780]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: I shall say that it was from me that the decision came.'
+    TARGET: Je dirai que c’est de moi que vient cette résolution.
+ PREDICTED: Je dirai que c ’ était de ma résolution fut mise à cette décision .
+--------------------------------------------------------------------------------
+    SOURCE: Well! what pleasant odour did he find in him?
+    TARGET: Eh bien! quelle bonne odeur lui trouvait-il?
+ PREDICTED: Eh bien ! quelle odeur , se retrouver là ?
+--------------------------------------------------------------------------------
+Processing Epoch 23: 100%|██████████| 5351/5351 [08:34<00:00, 10.41it/s, loss=1.672]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Why him, more than any one else?"
+    TARGET: Tiens! pourquoi lui plutôt qu'un autre?
+ PREDICTED: Pourquoi lui plutôt qu ’ un autre ?
+--------------------------------------------------------------------------------
+    SOURCE: He pitied himself when he thought of his mad jealousy.
+    TARGET: Il se prenait en pitié, au souvenir de sa folie jalouse.
+ PREDICTED: Il se plaignait de sa jalousie , il de sa jalousie .
+--------------------------------------------------------------------------------
+Processing Epoch 24: 100%|██████████| 5351/5351 [08:44<00:00, 10.20it/s, loss=1.528]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "Nothing, except a little pain in the ears."
+    TARGET: ---Aucunement, sauf quelques douleurs d'oreilles.
+ PREDICTED: -- Rien , si peu qu ' une douleur se dans les oreilles .
+--------------------------------------------------------------------------------
+    SOURCE: "Mother, it's some coffee and sugar; yes, for the children.
+    TARGET: —Maman, c'est du café et du sucre… Oui, pour les enfants…
+ PREDICTED: — Maman , c ' est du café , oui , oui , pour les enfants …
+--------------------------------------------------------------------------------
+Processing Epoch 25: 100%|██████████| 5351/5351 [09:05<00:00,  9.81it/s, loss=1.849]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "India."
+    TARGET: -- Dans l'Inde.
+ PREDICTED: -- J ' y ai des Indes .
+--------------------------------------------------------------------------------
+    SOURCE: Or rather—? No; it is the excess of happiness.
+    TARGET: Non, c’est l’excès du bonheur!
+ PREDICTED: Ou un peu l ’ excès du bonheur , c ’ est l ’ excès du bonheur de la félicité .
+--------------------------------------------------------------------------------
+Processing Epoch 26: 100%|██████████| 5351/5351 [08:38<00:00, 10.33it/s, loss=1.786]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 'Tonight, Ma'am, at two o'clock, I am coming to your room, I have something to say to you.'
+    TARGET: – Madame, cette nuit à deux heures, j’irai dans votre chambre, je dois vous dire quelque chose.
+ PREDICTED: Joskins , qui est arrivé , je vais même deux heures de votre chambre , je vous dois vous dire .
+--------------------------------------------------------------------------------
+    SOURCE: "No doubt it is very quiet at the bottom of this well, but there is something alarming in the quietness itself."
+    TARGET: --Sans doute, nous sommes fort tranquilles au fond de ce puits; mais ce calme même a quelque chose d'effrayant.
+ PREDICTED: -- Sans doute , c ' est très tranquille , au fond de ce puits , mais il y a quelque chose d ' imposant dans les recevait de très pauvres .»
+--------------------------------------------------------------------------------
+Processing Epoch 27: 100%|██████████| 5351/5351 [08:35<00:00, 10.39it/s, loss=1.546]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: George snatched it up, and rushed downstairs.
+    TARGET: George la ramassa, et dévala les escaliers.
+ PREDICTED: George la suivit , et se leva .
+--------------------------------------------------------------------------------
+    SOURCE: — Et en quoi ne l’ai-je pas fait ? s’écria Ferrier en levant les bras au ciel.
+    TARGET: "And how have I neglected it?" asked Ferrier, throwing out his hands in expostulation.
+ PREDICTED: " And what could I not the right if I called him ?" cried the arms .
+--------------------------------------------------------------------------------
+Processing Epoch 28: 100%|██████████| 5351/5351 [08:33<00:00, 10.42it/s, loss=1.603]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: "Stop a bit!" said Aramis.
+    TARGET: -- Tiens, au fait! dit Aramis.
+ PREDICTED: -- Un instant ! dit Aramis .
+--------------------------------------------------------------------------------
+    SOURCE: It was with anger that Julien saw himself surpassed in this respect by the most boorish peasants.
+    TARGET: C’était avec colère que Julien se voyait primé dans ce genre par les paysans les plus grossiers.
+ PREDICTED: C ’ était avec lui que Julien connaissait de ce respect des paysans inconnus , que les paysans .
+--------------------------------------------------------------------------------
+Processing Epoch 29: 100%|██████████| 5351/5351 [08:36<00:00, 10.36it/s, loss=1.533]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: At last the count came out, got into his carriage and disappeared.
+    TARGET: Enfin le comte sortit, remonta dans sa voiture et disparut.
+ PREDICTED: Enfin le comte quitta , dans sa voiture et disparut .
+--------------------------------------------------------------------------------
+    SOURCE: Bonnemort was there alone, with large fixed eyes, nailed to his chair in front of the cold fireplace.
+    TARGET: Bonnemort était la, seul, les yeux larges et fixes, cloué sur une chaise, devant la cheminée froide.
+ PREDICTED: Bonnemort était la , d ' une large face large , montrait a sur sa chaise , devant ce froid .
+--------------------------------------------------------------------------------
+
+Process finished with exit code 0

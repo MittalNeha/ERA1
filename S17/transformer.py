@@ -18,14 +18,18 @@ class LayerNormalization(nn.Module):
 
 
 class FeedForwardBlock(nn.Module):
-    def __init__(self, d_model: int, d_ff: int, dropout: float) -> None:
+    def __init__(self, d_model: int, d_ff: int, dropout: float, activation='relu') -> None:
         super().__init__()
         self.linear_1 = nn.Linear(d_model, d_ff)
+        if activation == 'gelu':
+            self.activation = nn.GELU()
+        else:
+            self.activation = nn.ReLU()
         self.dropout = nn.Dropout(dropout)
         self.linear_2 = nn.Linear(d_ff, d_model)
 
     def forward(self, x):
-        return self.linear_2(self.dropout(torch.relu(self.linear_1(x))))
+        return self.linear_2(self.dropout(self.activation(self.linear_1(x))))
 
 
 class InputEmbeddings(nn.Module):
@@ -75,6 +79,47 @@ class ResidualConnection(nn.Module):
 
     def forward(self, x, sublayer):
         return x + self.dropout(sublayer(self.norm(x)))
+
+
+class PatchEmbedding(nn.Module):
+    """Turns a 2D input image into a 1D sequence learnable embedding vector.
+
+    Args:
+        in_channels (int): Number of color channels for the input images. Defaults to 3.
+        patch_size (int): Size of patches to convert input image into. Defaults to 16.
+        embedding_dim (int): Size of embedding to turn image into. Defaults to 768.
+    """
+
+    # 2. Initialize the class with appropriate variables
+    def __init__(self,
+                 in_channels: int = 3,
+                 patch_size: int = 16,
+                 embedding_dim: int = 768):
+        super().__init__()
+
+        # 3. Create a layer to turn an image into patches
+        self.patcher = nn.Conv2d(in_channels=in_channels,
+                                 out_channels=embedding_dim,
+                                 kernel_size=patch_size,
+                                 stride=patch_size,
+                                 padding=0)
+
+        # 4. Create a layer to flatten the patch feature maps into a single dimension
+        self.flatten = nn.Flatten(start_dim=2,  # only flatten the feature map dimensions into a single vector
+                                  end_dim=3)
+        self.patch_size = patch_size
+
+    # 5. Define the forward method
+    def forward(self, x):
+        # Create assertion to check that inputs are the correct shape
+        image_resolution = x.shape[-1]
+        assert image_resolution % self.patch_size == 0, f"Input image size must be divisble by patch size, image shape: {image_resolution}, patch size: {patch_size}"
+
+        # Perform the forward pass
+        x_patched = self.patcher(x)
+        x_flattened = self.flatten(x_patched)
+        # 6. Make sure the output shape has the right order
+        return x_flattened.permute(0, 2, 1)
 
 
 class MultiHeadAttentionBlock(nn.Module):
@@ -141,15 +186,18 @@ class EncoderBlock(nn.Module):
 
 
 class Encoder(nn.Module):
-    def __init__(self, layers: nn.ModuleList) -> None:
+    def __init__(self, layers: nn.ModuleList, norm_first=True) -> None:
         super().__init__()
         self.layers = layers
         self.norm = LayerNormalization()
+        self.norm_first = norm_first
 
     def forward(self, x, mask):
         for layer in self.layers:
             x = layer(x, mask)
-        return self.norm(x)
+        if self.norm_first:
+            x = self.norm(x)
+        return x
 
 
 class DecoderBlock(nn.Module):
@@ -226,7 +274,7 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
 
     encoder_blocks = []
 
-    for _ in range(N):
+    for _ in range(int(N/2)):
         encoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
         feed_forward_block = FeedForwardBlock(d_model, d_ff, dropout)
         encoder_block = EncoderBlock(encoder_self_attention_block, feed_forward_block, dropout)
@@ -234,7 +282,7 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
 
     decoder_blocks = []
 
-    for _ in range(N):
+    for _ in range(int(N/2)):
         decoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
         decoder_cross_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
         feed_forward_block = FeedForwardBlock(d_model, d_ff, dropout)
@@ -242,8 +290,14 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
                                      dropout)
         decoder_blocks.append(decoder_block)
 
-    encoder = Encoder(nn.ModuleList(encoder_blocks))
-    decoder = Decoder(nn.ModuleList(decoder_blocks))
+    e1, e2, e3 = encoder_blocks
+    d1, d2, d3 = decoder_blocks
+
+    encoder_blocks_ps = [e1, e2, e3, e1, e2, e3]
+    decoder_blocks_ps = [d1, d2, d3, d1, d2, d3]
+
+    encoder = Encoder(nn.ModuleList(encoder_blocks_ps))
+    decoder = Decoder(nn.ModuleList(decoder_blocks_ps))
 
     projection_layer = ProjectionLayer(d_model, tgt_vocab_size)
 

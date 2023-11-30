@@ -140,29 +140,98 @@ def get_ds(config):
     val_ds_size = len(ds_raw) - train_ds_size
     train_ds_raw, val_ds_raw = random_split(ds_raw, [train_ds_size, val_ds_size])
 
-    train_ds = BilingualDataset(train_ds_raw, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
-    val_ds = BilingualDataset(val_ds_raw, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
+    sorted_train_ds = sorted(train_ds_raw, key= lambda x:len(x["translation"][config["lang_src"]]))
+    filtered_sorted_train_ds = [k for k in sorted_train_ds if len(k["translation"][config["lang_src"]]) < 150]
+    # filtered_sorted_train_ds = [k for k in filtered_sorted_train_ds if len(k["translation"][config["lang_tgt"]]) < 120]
+    filtered_sorted_train_ds = [k for k in filtered_sorted_train_ds if len(k["translation"][config["lang_src"]]) + 10 > len(k["translation"][config["lang_tgt"]])]
+
+    filtered_val_ds = [k for k in val_ds_raw if len(k["translation"][config["lang_src"]]) < 150]
+    filtered_val_ds = [k for k in filtered_val_ds if
+                                len(k["translation"][config["lang_src"]]) + 10 > len(
+                                    k["translation"][config["lang_tgt"]])]
+
+    train_ds = BilingualDataset(filtered_sorted_train_ds, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
+    val_ds = BilingualDataset(filtered_val_ds, tokenizer_src, tokenizer_tgt, config['lang_src'], config['lang_tgt'], config['seq_len'])
 
     # Find the max len of each sentence in the source and target sentence
     max_len_src = 0
     max_len_tgt = 0
+    max_len_src_sent = 0
+    max_len_tgt_sent = 0
 
-    for item in ds_raw:
+    for item in filtered_sorted_train_ds:
         src_ids = tokenizer_src.encode(item['translation'][config['lang_src']]).ids
         tgt_ids = tokenizer_tgt.encode(item['translation'][config['lang_tgt']]).ids
+        max_len_src_sent = max(max_len_src_sent, len(item['translation'][config['lang_src']]))
+        max_len_tgt_sent = max(max_len_tgt_sent, len(item['translation'][config['lang_tgt']]))
         max_len_src = max(max_len_src, len(src_ids))
         max_len_tgt = max(max_len_tgt, len(tgt_ids))
 
-    print(f"Max length of source sentence: {max_len_src}")
-    print(f"Max length of target sentence: {max_len_tgt}")
+    print(f"Max length of source sentence token: {max_len_src}")
+    print(f"Max length of target sentence token: {max_len_tgt}")
 
-    train_dataloader = DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True)
-    val_dataloader = DataLoader(val_ds, batch_size=1, shuffle=True)
+    print(f"Max length of source sentence: {max_len_src_sent}")
+    print(f"Max length of target sentence: {max_len_tgt_sent}")
+
+    train_dataloader = DataLoader(train_ds, batch_size=config['batch_size'], shuffle=True, collate_fn=train_ds.collate_batch)
+    val_dataloader = DataLoader(val_ds, batch_size=1, shuffle=True, collate_fn=val_ds.collate_batch)
 
     return train_dataloader, val_dataloader, tokenizer_src, tokenizer_tgt
 
+def collate_fn(batch):
+    encoder_input_max = max(x["encoder_str_length"] for x in batch)
+    decoder_input_max = max(x["decoder_str_length"] for x in batch)
+
+    encoder_inputs = []
+    decoder_inputs = []
+    encoder_mask = []
+    decoder_mask = []
+    label = []
+    src_text = []
+    tgt_text = []
+
+    for b in batch:
+        enc_input_tokens = b["encoder_input"]  # Includes sos and eos
+        dec_input_tokens = b["decoder_input"]
+
+        # Add sos, eos, padding to each sentence
+        enc_num_padding_tokens = encoder_input_max - len(enc_input_tokens)
+        dec_num_padding_tokens = decoder_input_max - len(dec_input_tokens)
+
+        # Check that number of tokens is positive
+        if enc_num_padding_tokens < 0 or dec_num_padding_tokens < 0:
+            raise ValueError("Sentence is too short")
+
+        # only eos token for decoder output
+        label = torch.cat(
+            [
+                torch.tensor(dec_input_tokens, dtype=torch.int64),
+                self.eos_token,
+                torch.tensor([self.pad_token] * dec_num_padding_tokens, dtype=torch.int64),
+            ],
+            dim=0,
+        )
+
+        encoder_inputs.append(b["encoder_input"][:encoder_input_max])
+        decoder_inputs.append(b["encoder_input"][:decoder_input_max])
+        encoder_mask.append((b["encoder_mask"][0, 0, :encoder_input_max]).unsqueeze(0).unsqueeze(0).unsqueeze(0))
+        decoder_mask.append((b["decoder_mask"][0, :decoder_input_max, :decoder_input_max]).unsqueeze(0).unsqueeze(0))
+        label.append(b["label"][:decoder_input_max])
+        src_text.append(b["src_text"])
+        tgt_text.append(b["tgt_text"])
+    # print(len(encoder_inputs))
+    return  {
+        "encoder_input": torch.vstack(encoder_inputs),
+        "decoder_input": torch.vstack(decoder_inputs),
+        "encoder_mask": torch.vstack(encoder_mask),
+        "decoder_mask": torch.vstack(decoder_mask),
+        "label": torch.vstack(label),
+        "src_text": src_text,
+        "tgt_text": tgt_text
+    }
+
 def get_model(config, vocab_src_len, vocab_tgt_len):
-    model = build_transformer(vocab_src_len, vocab_tgt_len, config["seq_len"], config["seq_len"], d_model=config["d_model"])
+    model = build_transformer(vocab_src_len, vocab_tgt_len, config["seq_len"], config["seq_len"], d_model=config["d_model"], d_ff=config["d_ff"])
     return model
 
 def train_model(config):
@@ -178,6 +247,19 @@ def train_model(config):
     writer = SummaryWriter(config["experiment_name"])
 
     optimizer = torch.optim.Adam(model.parameters(), lr=config['lr'], eps=1e-9)
+    STEPS_PER_EPOCH = len(train_dataloader)
+    MAX_LR = 10**-3
+
+    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
+                                                    max_lr=MAX_LR,
+                                                    steps_per_epoch=STEPS_PER_EPOCH,
+                                                    epochs=config["num_epochs"],
+                                                    pct_start=0.2,
+                                                    div_factor=10,
+                                                    three_phase=True,
+                                                    final_div_factor=10,
+                                                    anneal_strategy="linear"
+                                                    )
 
     initial_epoch = 0
     global_step = 0
@@ -222,6 +304,8 @@ def train_model(config):
 
             optimizer.step()
             optimizer.zero_grad(set_to_none=True)
+            writer.add_scalar('lr', scheduler.get_lr()[0], global_step)
+            scheduler.step()
 
             global_step += 1
 
@@ -239,7 +323,7 @@ def train_model(config):
 if __name__ == '__main__':
     warnings.filterwarnings("ignore")
     cfg = get_config()
-    cfg['batch_size'] = 6
+    cfg['batch_size'] = 10
     cfg['preload'] = None
     cfg['num_epochs'] = 30
     train_model(cfg)
