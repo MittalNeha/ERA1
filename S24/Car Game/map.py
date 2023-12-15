@@ -55,15 +55,21 @@ def init():
     global goal_x
     global goal_y
     global first_update
+    global TARGETS
+    global skip_print
+
+
+    TARGETS = [[2000, 819], [41, 895], [1168, 251]]
     sand = np.zeros((longueur,largeur))
     # img = PILImage.open("./images/mask.png").convert('L')
     img = PILImage.open("./images/homemapmask_rot.png").convert('L')
     sand = np.asarray(img)/255
-    goal_x = 2082- 10 #1420
-    goal_y = 1151-20 #622
+    goal_x = 2000 #1420
+    goal_y = 1151-330 #622
     first_update = False
     global swap
     swap = 0
+    skip_print = 0
 
 
 # Initializing the last distance
@@ -102,11 +108,11 @@ class Car(Widget):
         self.signal2 = int(np.sum(sand[int(self.sensor2_x)-10:int(self.sensor2_x)+10, int(self.sensor2_y)-10:int(self.sensor2_y)+10]))/400.
         self.signal3 = int(np.sum(sand[int(self.sensor3_x)-10:int(self.sensor3_x)+10, int(self.sensor3_y)-10:int(self.sensor3_y)+10]))/400.
         if self.sensor1_x>longueur-10 or self.sensor1_x<10 or self.sensor1_y>largeur-10 or self.sensor1_y<10:
-            self.signal1 = 10.
+            self.signal1 = 10./10
         if self.sensor2_x>longueur-10 or self.sensor2_x<10 or self.sensor2_y>largeur-10 or self.sensor2_y<10:
-            self.signal2 = 10.
+            self.signal2 = 10./10
         if self.sensor3_x>longueur-10 or self.sensor3_x<10 or self.sensor3_y>largeur-10 or self.sensor3_y<10:
-            self.signal3 = 10.
+            self.signal3 = 10./10
         
 
 class Ball1(Widget):
@@ -140,7 +146,8 @@ class Game(Widget):
         global longueur
         global largeur
         global swap
-        
+        global TARGETS
+        global skip_print
 
         longueur = self.width
         largeur = self.height
@@ -160,17 +167,19 @@ class Game(Widget):
         self.ball2.pos = self.car.sensor2
         self.ball3.pos = self.car.sensor3
 
-        if sand[int(self.car.x),int(self.car.y)] > 0:
+        if sand[int(self.car.x),int(self.car.y)] > 0.5:
             self.car.velocity = Vector(0.5, 0).rotate(self.car.angle)
             print(1, goal_x, goal_y, distance, int(self.car.x),int(self.car.y), im.read_pixel(int(self.car.x),int(self.car.y)))
             
-            last_reward = -1
+            last_reward = -0.7
         else: # otherwise
             self.car.velocity = Vector(2, 0).rotate(self.car.angle)
-            last_reward = -0.2
+            last_reward = -0.1
             print(0, goal_x, goal_y, distance, int(self.car.x),int(self.car.y), im.read_pixel(int(self.car.x),int(self.car.y)))
             if distance < last_distance:
-                last_reward = 0.1
+                last_reward = 0.5
+            if distance < 80:
+                self.car.velocity = Vector(1, 0).rotate(self.car.angle)
             # else:
             #     last_reward = last_reward +(-0.2)
 
@@ -188,14 +197,19 @@ class Game(Widget):
             last_reward = -1
 
         if distance < 25:
-            if swap == 1:
-                goal_x = 2082-10 #1420
-                goal_y = 1151-20 #622
-                swap = 0
-            else:
-                goal_x = 9
-                goal_y = 85
-                swap = 1
+            swap = (swap + 1) % 3
+            goal_x, goal_y = TARGETS[swap]
+
+            # if swap == 1:
+            #     goal_x = 1700 #1420
+            #     goal_y = 1151-321 #622
+            #     swap = 0
+            # else:
+            #     goal_x = 41
+            #     goal_y = 1151-256
+            #     swap = 1
+
+        ##1150, 900
         last_distance = distance
 
 # Adding the painting tools
